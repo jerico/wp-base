@@ -5,3 +5,7 @@
 
 `composer install`
 
+## TODO
+- Cleanup roots
+  - remove bootstrap
+  - add stylus support on grunt
