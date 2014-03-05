@@ -8,7 +8,7 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content' );
-//define( 'WP_CONTENT_URL', dirname(__FILE__) . '/wp-content' );
+define( 'WP_CONTENT_URL', $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'] . $WP_HOME . '/wp-content' );
 
 define( 'WP_DEBUG', true );
 
