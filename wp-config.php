@@ -7,6 +7,11 @@ define('DB_HOST', 'localhost');
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
+define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content' );
+//define( 'WP_CONTENT_URL', dirname(__FILE__) . '/wp-content' );
+
+define( 'WP_DEBUG', true );
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -60,5 +65,10 @@ define('WP_DEBUG', false);
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
+define('AUTOMATIC_UPDATER_DISABLED', true);
+define('DISABLE_WP_CRON', true);
+define('DISALLOW_FILE_EDIT', true);
+
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
