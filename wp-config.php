@@ -1,11 +1,13 @@
 <?php
 
 // Local
-if (preg_match('/\.local/', $_SERVER['HTTP_HOST'])) {
+if (preg_match('/localhost/', $_SERVER['HTTP_HOST'])) {
   define('DB_NAME', 'wp-base');
   define('DB_USER', 'root');
   define('DB_PASSWORD', '');
   define('DB_HOST', 'localhost');
+  define('WP_DEBUG', true);
+  define( 'WP_CONTENT_URL', 'http://localhost/wp-base/wp-content' );
 }
 
 // Remote
@@ -14,73 +16,37 @@ else {
   define('DB_USER', '');
   define('DB_PASSWORD', '');
   define('DB_HOST', 'localhost');
+  define( 'WP_CONTENT_URL', '' );
 }
+
+$table_prefix  = 'wpbase_';
 
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content' );
-define( 'WP_CONTENT_URL', $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'] . $WP_HOME . '/wp-content' );
-
-define( 'WP_DEBUG', true );
-
-/**#@+
- * Authentication Unique Keys and Salts.
- *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
- *
- * @since 2.6.0
- */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
-
-/**#@-*/
-
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
- */
-$table_prefix  = 'wp_';
-
-/**
- * WordPress Localized Language, defaults to English.
- *
- * Change this to localize WordPress. A corresponding MO file for the chosen
- * language must be installed to wp-content/languages. For example, install
- * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
- * language support.
- */
-define('WPLANG', '');
-
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- */
-define('WP_DEBUG', false);
-
-/* That's all, stop editing! Happy blogging. */
-
-/** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
 
 define('AUTOMATIC_UPDATER_DISABLED', true);
 define('DISABLE_WP_CRON', true);
 define('DISALLOW_FILE_EDIT', true);
 
-/** Sets up WordPress vars and included files. */
+
+// Authentication Unique Keys and Salts.
+// https://api.wordpress.org/secret-key/1.1/salt/ 
+
+define('AUTH_KEY',         '8ID#LF1YbgI)|I!++*$}J;lT8p7Nd rGg!kJtg<.s-zjl[B.h0^A%4fW.NHC_L0)');
+define('SECURE_AUTH_KEY',  '|+ASUtR_rEjZ+=VtBkTjpzC;v}O<9;omgSf`Ep-2b`UMgnhZn1o[>V)N5~9(nP4+');
+define('LOGGED_IN_KEY',    '5tU%?e.3T_t#N((`B.]:m/dm;gdb]sY=[$_v?XC JwV#8)un)fzLiFTd&pMp=NP;');
+define('NONCE_KEY',        'r-.i$un-%4E+!5_SOD2@P6l6P-):tphj2Ju2~G7XV-N&Hm#qjk.;z+N]Eiym?jN&');
+define('AUTH_SALT',        'xv9BnzO:dy-~sO5wm~xDa[?!Mx6^[PO67:RG#`RUqC1$hg*z}@&$+)?Al[,9FcC|');
+define('SECURE_AUTH_SALT', 'c1!gnI_%gZ$h[4-ap9 &=|p`-[Zw08@_0Mr,%)W36yH:47IL%|I5I`:M]-HL!TE0');
+define('LOGGED_IN_SALT',   'iuV!M*1&n(@!(=|F;.iT[:*+p7O:C3{hkPj/a<-^$mtj*<0Fyg!nFK_+2h19a -S');
+define('NONCE_SALT',       '+n-iGgeJeGy#+#DvtL+3[A28L)2V*x%74(p 1 phNov}%X0!MaMN{fw@u=!Rr*+2');
+
+// Absolute path to the WordPress directory. 
+if ( !defined('ABSPATH') )
+	define('ABSPATH', dirname(__FILE__) . '/');
+
+// Sets up WordPress vars and included files. 
 require_once(ABSPATH . 'wp-settings.php');
 

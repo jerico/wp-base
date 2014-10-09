@@ -1,11 +1,5 @@
 # Wordpress Base
-- Using composer as dependency management
-  - Wordpress as dependency
-- [roots](http://roots.io) as base theme
+- Wordpress as composer dependency
+- Theme is based from _s
+- Gulp autocompiles stylus and autoreload the browser when running locally
 
-`composer install`
-
-## TODO
-- Cleanup roots
-  - remove bootstrap
-  - add stylus support on grunt

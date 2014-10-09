@@ -1,0 +1,18 @@
+{
+  "name": "wp-base",
+  "version": "0.0.1",
+  "description": "Wordpress starter theme",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-livereload": "*",
+    "gulp-stylus": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jerico/wp-base.git"
+  },
+  "author": "Jerico Aragon",
+  "homepage": "https://github.com/jerico/wp-base"
+}
