@@ -1,33 +1,32 @@
 <?php
 
+define('BASE_NAME', 'base');
+
 // Local
 if (preg_match('/localhost/', $_SERVER['HTTP_HOST'])) {
-  define('DB_NAME', 'wp-base');
+  define('DB_NAME', BASE_NAME . '_db');
   define('DB_USER', 'root');
   define('DB_PASSWORD', '');
   define('DB_HOST', 'localhost');
   define('WP_DEBUG', true);
-  define( 'WP_CONTENT_URL', 'http://localhost/wp-base/wp-content' );
+  define( 'WP_CONTENT_URL', 'http://localhost/' . basename(__DIR__) . '/wp-content' );
 }
 
 // Remote
 else {
-  define('DB_NAME', '');
-  define('DB_USER', '');
+  define('DB_NAME', BASE_NAME . '_db');
+  define('DB_USER', BASE_NAME . '_db');
   define('DB_PASSWORD', '');
   define('DB_HOST', 'localhost');
   define( 'WP_CONTENT_URL', '' );
 }
 
-$table_prefix  = 'wpbase_';
+$table_prefix  = BASE_NAME . '_';
 
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
-
-define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content' );
-
+define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content' );
 define('AUTOMATIC_UPDATER_DISABLED', true);
-define('DISABLE_WP_CRON', true);
 define('DISALLOW_FILE_EDIT', true);
 
 
