@@ -10,6 +10,8 @@ if (preg_match('/localhost/', $_SERVER['HTTP_HOST'])) {
   define('DB_HOST', 'localhost');
   define('WP_DEBUG', true);
   define( 'WP_CONTENT_URL', 'http://localhost/' . basename(__DIR__) . '/wp-content' );
+  // define('WP_HOME','http://localhost/' . BASE_NAME);
+  // define('WP_SITEURL','http://localhost/wp/' . BASE_NAME);
 }
 
 // Remote
